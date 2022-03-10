@@ -8,5 +8,5 @@ Prompts and instructions for exercises may be found on [gitHub](https://github.c
 
 There are also commented out sections within the JS file that may contain snippets of the prompts. 
 
-###
+### Contributors
 [Wesley Mitchell](https://github.com/wes-mitchell)
