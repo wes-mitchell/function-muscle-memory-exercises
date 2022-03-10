@@ -80,3 +80,53 @@ const numArr = [1, 4, 16, 13, 17, 26, 30]
   for (const num of numArr) {
     console.log(evenOrOdd(num))
 }
+
+// For this exercise, you are going to utilize two functions; each function will have a single responsibility. The goal of the exercise is to convert an array of words into a sentence, but some of the words in the array should not be included in the sentence.
+
+// Therefore, you need two functions.
+
+// One function to filter out the unwanted words.
+// One function to convert an array of words into a single sentence.
+// Each function needs to return a value.
+// The return value from one function needs to be passed to the other function.
+// In the array of words below, filter out any word that starts with the letter k. With the remaining words, combine them all into a single string and log that string to the console.
+
+const words = [
+  "The", "killing", "complex", "houses",
+  "married", "kittens", "and", "single",
+  "soldiers", "and", "their", "kleptomaniacal",
+  "families"
+]
+// words.filter(word => word.startsWtih('k'))
+
+/* +
+  Function to filter out `k` words
+  (Google 'javascript startswith' to get started)
+*/
+const filterKWords = () => {
+  return words.filter(word => !word.startsWith('k'))
+}
+/*
+  Function to build a single string from the array
+  (Google 'javascript combine all items in array' to get started)
+*/
+const concatenate = (arr) => {
+  return arr.join(' ')
+}
+
+/*
+  Invoke the filtering function and store its return value
+*/
+const sansK = filterKWords()
+const string = concatenate(sansK)
+/*
+  Invoke the string building function, and pass the
+  return value of the previous function as an argument
+*/
+
+
+console.log(string)
+
+like .filter(parameter => {
+  parameter whatever whatever
+})
