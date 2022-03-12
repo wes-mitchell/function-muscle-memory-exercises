@@ -127,6 +127,101 @@ const string = concatenate(sansK)
 
 console.log(string)
 
-like .filter(parameter => {
-  parameter whatever whatever
-})
+// Higher Order functions Practice (passing a function as an argument)
+
+const twice = number => number * 2 // function to multiply paramter by 2
+
+const twiceThree = twice(3)
+console.log(twiceThree);
+
+const timesFive = number => number *5 // function for multiplying a number by 5
+const squareMe = number => number * number  // function for squaring a number
+
+const doSomeMath = (number, operatorFunction) => {
+  const result = operatorFunction(number)
+  return result
+}
+
+let twosquared = doSomeMath(2, squareMe)
+console.log(twosquared);
+
+const number = 250
+const by5 = doSomeMath(number, timesFive)
+const squared  = doSomeMath(number, squareMe)
+console.log(by5);
+console.log(squared);
+
+const numberCubed = number => number * number * number // function for cubing a number
+
+// DEFINING CHORES exercise
+
+const wes = {     // person object
+  first: "Wes",
+  last: "Mitchell"
+}
+
+const john = {
+  first: "John",
+  last: "Moler"
+}
+
+const karissa = {
+  first: "Karissa",
+  last: "Deiter"
+}
+
+const keggers = {
+  first: "Kolonel",
+  last: "Keggers"
+}
+
+const grocery = person => `${person.first} ${person.last} went to the grocery store`
+const dishes = person => `${person.first} ${person.last} did the dishes`
+const trash = person => `${person.first} ${person.last} enthusiastically took the trash out`
+const bills = person => `${person.first} ${person.last} paid all the bills on time`
+const drums = person => `${person.first} ${person.last} said screw all chores and played drums`
+const clean = person => `${person.first} ${person.last} swept the house and made sure all surfaces were clean`
+const bass = person => `${person.first} ${person.last} said screw all chores and played bass instead`
+
+
+
+const dayPlanner = (person, chore, day) => {
+  return `${chore(person)} and the day was ${day}.`
+}
+const busyDay = (chore1, chore2, chore3, person, day) => {
+  return `On ${day}, ${chore1(person)}, ${chore2(person)}, ${chore3(person)}.`
+}
+// Now define a function that has three parameters. The purpose of each parameter is as follows:
+
+// chore - A function that will perform a chore
+// person - An object representing a perform. It should have a firstName and a lastName property.
+// day - The weekday to perform the task (e.g. "Tuesday")
+// We suggest you name this higher order function dayPlanner().
+
+// The return value of dayPlanner should be a string in the following format, assuming the person object represents Yolanda Johnson, the chore was mowing the lawn, and the day was Thursday.
+
+// "Yolanda Johnson mowed the lawn on Thursday."
+// Log that output to the developer console.
+
+console.log(dayPlanner(wes, drums, "Wednesday"));
+console.log(dayPlanner(karissa, bass, "Saturday"));
+console.log(dayPlanner(john, bills, "Monday"));
+console.log(dayPlanner(keggers, grocery, "Thursday"));
+
+console.log(busyDay(drums, bills, clean, wes, "Monday"));
+console.log(busyDay(trash, bills, bass, keggers, "Saturday"));
+
+const catchTuna = (num) => {
+  const hooked = Math.random() * num
+  if (hooked <= 1 ) {
+    console.log(`Sven hooked at tuna! :)`)
+  } else 
+  {
+    console.log(`Sven came up empty-handed. :(`);
+  }
+
+}
+
+catchTuna(3)
+catchTuna(5)
+catchTuna(6)
